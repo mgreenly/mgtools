@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ ! -z $TMUX ]; then
+  echo "Cowardly refusing to run.  TMUX is already running."
+  exit 1
+fi
+
+echo 'adding notes'
+tmux new-session -d -s Notes -n NOTES
+tmux send-keys -t Notes "cd ; vim Dropbox/new-notes.txt" C-m
+
+echo 'adding scratch'
+tmux new-session -d -s Scratch -n SCRATCH
+tmux send-keys -t Scratch "cd ; ls -lha" C-m
+
+echo 'adding mgtools'
+tmux new-session -d -s MgTools -n MGTOOLS
+tmux send-keys -t Foo "cd ~/Projects/mgtools; ls -lha" C-m
+
+tmux attach -t Scratch

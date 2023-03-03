@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "$(mg-cluster-scheme)://$1.$(mg-cluster-ip).nip.io:$(mg-cluster-port)"
