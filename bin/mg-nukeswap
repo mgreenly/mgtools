@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# finds and delete all vim swp files beneath the home directory.  There are times
+# when vim doesn't get shut down properly and I'm to lazy to go recorver/delete
+# each of the individual 
+
+find $HOME -name '*.swp' -exec rm {} \;
