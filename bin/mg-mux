@@ -11,10 +11,18 @@ tmux send-keys -t Notes "cd ; vim Dropbox/new-notes.txt" C-m
 
 echo 'adding scratch'
 tmux new-session -d -s Scratch -n SCRATCH
-tmux send-keys -t Scratch "cd ; ls -lha" C-m
+tmux send-keys -t Scratch "clear; cd ~; ls -lha; echo" C-m
+
+echo 'adding dotfiles'
+tmux new-session -d -s DotFiles -n DOTFILES
+tmux send-keys -t DotFiles "clear; cd ~/Projects/dotfiles; ls -lha; echo" C-m
 
 echo 'adding mgtools'
 tmux new-session -d -s MgTools -n MGTOOLS
-tmux send-keys -t Foo "cd ~/Projects/mgtools; ls -lha" C-m
+tmux send-keys -t MgTools "clear; cd ~/Projects/mgtools; ls -lha; echo" C-m
+
+echo 'adding worldbuilder'
+tmux new-session -d -s WorldBuilder -n WORLDBUILDER
+tmux send-keys -t WorldBuilder "clear; cd ~/Projects/worldbuilder; ls -lha; echo" C-m
 
 tmux attach -t Scratch
